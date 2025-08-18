@@ -1,4 +1,4 @@
-version: '3.8'
+#version: '3.8'
 
 services:
   nginx:
@@ -11,10 +11,17 @@ services:
     depends_on:
       - php
 
+  # 本番（デフォルト起動）
   php:
-    build: ./docker/php
+    #build: ./docker/php
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+      args:
+        UID: ${UID:-501} # Macの設定
+        GID: ${GID:-20} # Macの既定(staff)
     volumes:
-      - ./src:/var/www/
+      - ./src:/var/www/ # Laravel プロジェクトのマウント
 
   mysql:
     image: mysql:8.0.26

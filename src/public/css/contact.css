@@ -1,0 +1,101 @@
+/* public/css/contact.css */
+.contact-form {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    align-items: center;
+    margin: 18px 0;
+}
+
+.form-label {
+    justify-self: start;
+    color: var(--text);
+}
+
+.form-error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+}
+
+.req {
+    color: var(--danger);
+}
+
+.inputs input[type="text"],
+.inputs input[type="email"],
+.inputs textarea,
+.inputs select {
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    background: var(--field);
+    padding: 14px 16px;
+    font-size: 15px;
+    outline: none;
+}
+
+.inputs.two-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.inputs.tel {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.sep {
+    color: #b3a79d;
+}
+
+.inputs.radios {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.inputs.radios input[type="radio"] {
+    transform: translateY(1px);
+    margin-right: 6px;
+}
+
+.inputs.select {
+    position: relative;
+}
+
+.inputs.select select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: var(--field);
+}
+
+.select-caret {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #b3a79d;
+    font-size: 18px;
+}
+
+.inputs textarea {
+    resize: vertical;
+    min-height: 160px;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 32px;
+}
+

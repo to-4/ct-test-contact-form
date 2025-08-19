@@ -1,0 +1,50 @@
+.confirm-form {
+    max-width: 860px;
+    margin: 0 auto
+}
+
+.confirm-table {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden
+}
+
+.confirm-table .row {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    border-bottom: 1px solid var(--border);
+    min-height: 60px
+}
+
+.confirm-table .row:last-child {
+    border-bottom: none
+}
+
+.confirm-table .th {
+    background: #b7a29080;
+    /* 落ち着いたベージュ系（半透明で柔らかく） */
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 16px 20px
+}
+
+.confirm-table .td {
+    background: #fff;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    padding: 16px 20px
+}
+
+.confirm-table .td.pre {
+    white-space: pre-wrap;
+    line-height: 1.7;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 22px
+}

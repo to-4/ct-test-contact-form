@@ -1,0 +1,120 @@
+
+.header__logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+/* public/css/base.css */
+:root {
+    --bg: #f7f4f1;
+    --text: #54463b;
+    --brand: #6f5c4e;
+    /* 見出しブラウン */
+    --muted: #a69487;
+    --border: #e9e3de;
+    --danger: #e06b6b;
+    --field: #f2efec;
+    /* 入力欄の薄グレー */
+    --btn: #7a6657;
+    --btn-text: #fff;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans JP", sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+}
+
+.site-header {
+    border-bottom: 1px solid var(--border);
+    background: #fff;
+}
+
+.site-header .brand {
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    letter-spacing: .06em;
+    color: var(--brand);
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.page-title {
+    text-align: center;
+    color: var(--brand);
+    font-size: 28px;
+    font-weight: 600;
+    margin: 10px 0 26px;
+    letter-spacing: .04em;
+}
+
+a.btn-primary {
+    text-decoration: none !important;
+}
+
+.btn-primary {
+    display: inline-flex;     /* 中央寄せを確実に */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;     /* 念のため */
+    background: var(--btn);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 4px;
+    padding: 12px 28px;
+    font-size: 16px;
+    letter-spacing: .08em;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    opacity: .92
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: #7a6657;
+    font-size: 16px;
+    margin-left: 24px;
+    cursor: pointer;
+    text-decoration: underline
+}
+
+.to-home {
+    min-width: 140px; /* 任意：ボタン幅の下限 */
+}
+
+
+/* 汎用 */
+.alert {
+    background: #fff3f3;
+    border: 1px solid #ffdada;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    color: #8a2a2a;
+}

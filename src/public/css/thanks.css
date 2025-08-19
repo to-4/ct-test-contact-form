@@ -1,0 +1,44 @@
+/* 画面中央に配置 & 背景に大きく “Thank you” の透かし */
+.thanks-wrap {
+    position: relative;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.thanks-wrap::before {
+    content: "Thank you";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -10%); /* 横中央 & 少し下げる */
+    width: 100vw;                     /* 画面幅いっぱいで描画（container外に広げる） */
+    white-space: nowrap;              /* 改行しない */
+    text-align: center;
+
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: clamp(72px, 14vw, 180px);    /* 必ず1行に収まる安全域。大きさはお好みで 12–16vw 程度 */
+    line-height: 1;
+    color: #000;
+    opacity: .04;
+    pointer-events: none;
+    user-select: none;
+}
+
+.thanks-message {
+    position: relative;
+    /* ::before の上に出す */
+    font-size: 20px;
+    color: var(--brand);
+    letter-spacing: .04em;
+    margin: 0;
+}
+
+.to-home {
+    position: relative;
+    min-width: 140px;
+}

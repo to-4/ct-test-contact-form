@@ -1,0 +1,70 @@
+/* カード（白いフォームボックス） */
+.register-card {
+    max-width: 720px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 48px 42px 52px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .03);
+}
+
+/* フォーム */
+.register-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-label {
+    display: block;
+    margin: 0 0 10px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* 画像の横幅感に合わせて入力欄をややワイドに */
+.form-input {
+    width: 100%;
+    max-width: 520px;
+    display: block;
+    background: var(--field);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px 16px;
+    color: var(--text);
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: #bfbfbf;
+}
+
+.form-input:focus {
+    border-color: var(--muted);
+    box-shadow: 0 0 0 3px rgba(182, 168, 157, .20);
+}
+
+/* エラー表示（必要なら） */
+.form-error {
+    margin: 8px 0 0;
+    color: var(--danger);
+    font-size: 13px;
+}
+
+.is-invalid {
+    border-color: var(--danger) !important;
+    box-shadow: 0 0 0 3px rgba(224, 107, 107, .15) !important;
+}
+
+/* ボタンを中央に */
+.form-actions {
+    margin-top: 6px;
+    text-align: center;
+}
+
+.to-home {
+    min-width: 140px;
+}

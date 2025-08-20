@@ -17,7 +17,6 @@ class ContactController extends Controller
 
         return view('contact.index', compact('categories'));
     }
-
     public function confirm(StoreContactRequest $request)
     {
 
@@ -38,8 +37,7 @@ class ContactController extends Controller
 
         $categoryMap = Category::pluck('content', 'id'); // 変換用
         return view('contact.confirm', compact('data', 'categoryMap'));
-     }
-
+    }
     public function send(Request $request)
     {
         // Blade の hidden フォームから受け取る
@@ -73,7 +71,6 @@ class ContactController extends Controller
 
         return redirect()->route('contact.thanks');
     }
-
     public function thanks()
     {
         return view('contact.thanks'); // 必要なら別途用意

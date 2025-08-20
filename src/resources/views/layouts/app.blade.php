@@ -13,16 +13,30 @@
 
 <body>
   <header class="site-header">
-    <div class="container">
+    <div class="container header-wrap">   {{-- 位置指定のためクラスを追加 --}}
       <a class="header__logo" href="/">
         <h1 class="brand">FashionablyLate</h1>
       </a>
+      {{-- 右上アクション差し込み（login / register をページ側で切替） --}}
+      <div class="header__action">
+        @yield('header_action')
+      </div>
     </div>
   </header>
+
+  {{-- Register などのページタイトル帯（任意セクションがあれば表示） --}}
+  @hasSection('page-title')
+    <section class="page-hero">
+      <div class="container">
+        <h2 class="page-title">@yield('page-title')</h2>
+      </div>
+    </section>
+  @endif
+
   <main class="container">
     @yield('content')
   </main>
 
-  @stack('scripts')
+  @yield('scripts')
 </body>
 </html>

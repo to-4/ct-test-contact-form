@@ -78,7 +78,7 @@
 }
 
 /* モーダル */
-.modal {
+/* .modal {
     display: block;
     position: fixed;
     top: 0;
@@ -87,24 +87,71 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 999;
+} */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    /* 画面中央に配置 */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .45);
+    /* 背景の黒半透明 */
+    z-index: 999;
 }
 
-.modal-content {
+.modal.hidden {
+    display: none;
+} /* ← 必須：非表示の切替 */
+
+/* .modal-content {
     background: #fff;
     max-width: 600px;
     margin: 80px auto;
     padding: 30px;
     border-radius: 6px;
     position: relative;
+} */
+.modal-content {
+    background: #fff;
+    width: min(880px, 92vw);         /* 見本はやや大きめ */
+    max-height: 86vh;                /* 画面からはみ出さない */
+    overflow: auto;
+    padding: 40px 48px;              /* しっかり余白 */
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    position: relative;
 }
 
-.modal-close {
+/* 閉じるボタン：円形で右上に */
+/* .modal-close {
     position: absolute;
     right: 16px;
     top: 12px;
     font-size: 24px;
     cursor: pointer;
+} */
+.modal-close {
+    position: absolute;
+    right: 16px;
+    top: 14px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--muted);
+    font-size: 20px;
+    line-height: 34px;
+    text-align: center;
+    cursor: pointer;
 }
+
+.modal-close:hover {
+    background: #faf7f4;
+}
+
 
 .modal-list {
     display: grid;
@@ -113,13 +160,60 @@
     margin-bottom: 20px;
 }
 
-.btn-danger {
+/* --- テーブル（見出し列と本文列） --- */
+.detail-table {
+    width: 100%;
+    border-collapse: separate; /* 行間を空けるために separate に */
+    border-spacing: 0 16px;    /* 各行の上下にゆとり */
+    table-layout: fixed;
+}
+
+.detail-table th {
+    width: 180px;
+    color: var(--brand);     /* 見出しをブラウン系に */
+    font-weight: 700;
+    text-align: left;
+    vertical-align: top;
+    padding: 2px 16px 2px 0; /* 右側に余白 */
+    white-space: nowrap;
+}
+
+.detail-table td {
+    color: var(--text);
+    line-height: 1.9;
+    padding: 2px 0;
+    word-break: break-word;
+}
+
+
+/* .btn-danger {
     background: var(--danger);
     color: #fff;
     border: none;
     border-radius: 4px;
     padding: 10px 20px;
     cursor: pointer;
+} */
+
+/* --- 削除ボタン（中央） --- */
+#deleteForm {
+    margin-top: 22px;
+    text-align: center;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 26px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .05);
+}
+
+.btn-danger:hover {
+    opacity: .9;
 }
 
 .hidden {

@@ -9,7 +9,8 @@
 
 {{-- ヘッダー右上リンク（画像では「register」） --}}
 @section('header_action')
-  <a href="{{ route('register') }}" class="btn-link">register</a>
+  <!-- <a href="{{ route('register') }}" class="btn-link">register</a> -->
+  <a href="{{ route('register') }}"  class="btn-ghost">register</a>
 @endsection
 
 {{-- ページ専用CSS --}}

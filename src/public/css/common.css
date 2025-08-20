@@ -9,7 +9,8 @@
 
     /* public/css/base.css */
     :root {
-        --bg: #f7f4f1;
+        /* --bg: #f7f4f1; */
+        --bg: #efe8df; /* ← 外側も帯と同じ濃いベージュに変更 */
         --text: #54463b;
         --brand: #6f5c4e;
         /* 見出しブラウン */
@@ -42,7 +43,8 @@
     .container {
         max-width: 980px;
         margin: 0 auto;
-        padding: 40px 20px 80px;
+        /* padding: 40px 20px 80px; */
+        padding: 0px 20px 80px;
     }
 
     .site-header {
@@ -55,7 +57,7 @@
     }
 
     .site-header .container {
-        padding: 16px 20px;
+        padding: 14px 20px;
         /* 上下を12px程度に。お好みで 10〜16px */
     }
 
@@ -91,7 +93,7 @@
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
         /* padding: 32px 0 40px; */
-        padding: 30px 0;
+        padding: 12px 0 12px;
     }
 
     .page-hero>.container {
@@ -156,4 +158,37 @@
         border-radius: 6px;
         margin-bottom: 18px;
         color: #8a2a2a;
+    }
+
+    /* ヘッダー用：白背景＋細い枠線の小さめゴーストボタン */
+    .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        background: #fff;
+        /* 白 */
+        color: var(--muted);
+        /* 少し薄い文字色 */
+        border: 1px solid var(--border);
+        /* 細い枠 */
+        border-radius: 4px;
+        padding: 6px 14px;
+        /* 小さめ */
+        font-size: 14px;
+        /* 小さめ */
+        letter-spacing: .02em;
+        line-height: 1;
+    }
+
+    .btn-ghost:hover {
+        background: #f9f6f3;
+        /* うっすら色がつく程度 */
+        color: var(--text);
+        border-color: #dfd7d0;
+    }
+
+    /* ヘッダー右上の位置は既存 header__action を使用 */
+    .header__action a {
+        text-decoration: none;
     }

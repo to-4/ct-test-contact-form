@@ -9,7 +9,8 @@
 
 {{-- ヘッダー右上に「login」リンクを表示（画像どおり） --}}
 @section('header_action')
-  <a href="{{ route('login') }}" class="btn-link">login</a>
+  <!-- <a href="{{ route('login') }}" class="btn-link">login</a> -->
+  <a href="{{ route('login') }}"  class="btn-ghost">login</a>
 @endsection
 
 {{-- ページ専用CSS --}}

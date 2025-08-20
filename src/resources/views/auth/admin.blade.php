@@ -5,14 +5,14 @@
 {{-- ページタイトル帯 --}}
 @section('page-title')
   Admin
-  {{ request('gender') == "1" ? '男性' : ''}}
 @endsection
 
 {{-- ヘッダー右上（ログアウト） --}}
 @section('header_action')
   <form action="{{ route('logout') }}" method="POST" style="display:inline;">
     @csrf
-    <button type="submit" class="btn-link">logout</button>
+    <!-- <button type="submit" class="btn-link">logout</button> -->
+    <button type="submit" class="btn-ghost">logout</button>
   </form>
 @endsection
 
@@ -49,14 +49,6 @@
     </select>
 
     {{-- カテゴリ --}}
-    <!-- <select name="category" class="search-select">
-      <option value="">お問い合わせの種類</option>
-      @foreach($categoryMap as $id => $label)
-        <option value="{{ $id }}" @if(($filters['category'] ?? '')==$id) selected @endif>
-          {{ $label }}
-        </option>
-      @endforeach
-    </select> -->
     <select name="category" class="search-select">
       <option value="">お問い合わせの種類</option>
       @foreach($categoryMap as $id => $label)

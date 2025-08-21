@@ -10,7 +10,8 @@
     /* public/css/base.css */
     :root {
         /* --bg: #f7f4f1; */
-        --bg: #efe8df; /* ← 外側も帯と同じ濃いベージュに変更 */
+        --bg: #f9f7f5;
+        --bg-login: #efe8df; /* ← 外側も帯と同じ濃いベージュに変更 */
         --text: #54463b;
         --brand: #6f5c4e;
         /* 見出しブラウン */
@@ -40,6 +41,10 @@
         -webkit-font-smoothing: antialiased;
     }
 
+    .login-bg {
+        background: var(--bg-login);
+    }
+
     .container {
         max-width: 980px;
         margin: 0 auto;
@@ -49,7 +54,8 @@
 
     .site-header {
         border-bottom: 1px solid var(--border);
-        background: #fff;
+        /* background: #fff; */
+        background: var(--bg);
     }
 
     .header-wrap {
@@ -89,9 +95,11 @@
     }
 
     .page-hero {
-        background: #efe8df;   /* 画像の薄ベージュ */
+        /* background: #efe8df; */ /* 画像の薄ベージュ */
+        background: var(-gb);
         border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
+        /* border-bottom: 1px solid var(--border); */
+        border-bottom: 0 solid var(--border);
         /* padding: 32px 0 40px; */
         padding: 12px 0 12px;
     }

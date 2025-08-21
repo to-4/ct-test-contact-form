@@ -65,9 +65,21 @@
     <a href="{{ route('admin') }}" class="btn-reset">リセット</a>
   </form>
 
-  {{-- エクスポートボタン --}}
+  <!-- {{-- エクスポートボタン --}}
   <div class="export">
     <button type="button" class="btn-reset">エクスポート</button>
+  </div> -->
+
+  {{-- エクスポート + ページネーション を同じ行に --}}
+  <div class="toolbar">
+    <div class="toolbar__left">
+      <button type="button" class="btn-reset" onclick="alert('エクスポートは未実装です');">エクスポート</button>
+    </div>
+
+    <div class="toolbar__right">
+      {{-- ▼ 後述の「カスタムページネーションビュー」を使って描画 --}}
+      {{ $contacts->withQueryString()->links('auth.vendor.pagination.admin') }}
+    </div>
   </div>
 
   {{-- 一覧テーブル --}}
@@ -94,7 +106,7 @@
           <td>{{ $contact->email }}</td>
           <td>{{ $contact->category->content ?? '' }}</td>
           <td>
-            <!-- <a href="{{ route('admin', $contact->id) }}" class="btn-detail">詳細</a> -->
+            <!-- JavaSript で dataset オブジェクトで参照するためカスタム属性使用（HTML5から有効） -->
             <button type="button"
                     class="btn-detail"
                     data-id="{{ $contact->id }}"
@@ -118,10 +130,10 @@
     </tbody>
   </table>
 
-  {{-- ページネーション --}}
+  <!-- {{-- ページネーション --}}
   <div class="pagination">
     {{ $contacts->links() }}
-  </div>
+  </div> -->
 
 {{-- モーダル --}}
 <div id="detailModal" class="modal hidden">
@@ -217,60 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const modal = document.getElementById('helloModal');
-//   const closeBtn = modal.querySelector('.modal-close');
-
-//   console.log("modal 要素:", modal);
-
-//   if (!modal) {
-//     console.error("❌ modal が取得できませんでした");
-//     return; // modal が無ければ後続処理を止める
-//   } else {
-//     console.log("✅ modal が見つかりました");
-//   }
-
-
-//   console.log("closeBtn 要素:", closeBtn);
-//   if (!closeBtn) {
-//     console.error("❌ closeBtn が取得できませんでした");
-//   } else {
-//     console.log("✅ closeBtn が見つかりました");
-//   }
-
-//   document.querySelectorAll('.btn-detail').forEach(btn => {
-//     btn.addEventListener('click', () => {
- 
- 
-//       if (!modal) {
-//         console.error("❌ modal が取得できませんでした");
-//         return; // modal が無ければ後続処理を止める
-//       } else {
-//         console.log("✅ modal が見つかりました");
-//       }
-
-//       //modal.style.display = 'block'; // モーダル表示
-//       modal.classList.remove('hidden');  // モーダル表示
-//       console.log("✅ modal から、.hidden 除外");
-//       console.log(modal);
-//       console.log(modal.style.display); // デバッグ用
-//       //modal.style.display = 'block'; // モーダル表示
-//       console.log(modal.style.display); // デバッグ用
-
-//     });
-//     console.log("✅ btn-detail にイベント張り付け");
-
-//   });
-
-//   closeBtn.addEventListener('click', () => {
-//     modal.classList.add('hidden');       // モーダル閉じる
-//   });
-
-//   modal.addEventListener('click', (e) => {
-//     if (e.target === modal) modal.classList.add('hidden'); // 背景クリックでも閉じる
-//   });
-// });
 
 </script>
 @endsection

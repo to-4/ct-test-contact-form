@@ -1,4 +1,4 @@
-@extends('layouts.app') {{-- 親: layouts.app.blade.php --}}
+@extends('layouts.app-login') {{-- 親: layouts.app-login.blade.php --}}
 
 @section('title', 'Login')
 

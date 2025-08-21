@@ -57,6 +57,8 @@
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    border-left: 1px solid var(--border) ;
+    border-right: 1px solid var(--border);
 }
 
 .admin-table th {
@@ -219,3 +221,63 @@
 .hidden {
     display: none !important;
 }
+
+
+/* エクスポート＋ページネーションを横並び */
+.toolbar {
+    display: flex;
+    justify-content: space-between; /* 左と右に分ける */
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* 左（エクスポート側） */
+.toolbar__left {
+    text-align: left;
+    /* 必要なら調整用にここへ margin/padding を追加 */
+}
+
+/* 右（ページネーション側） */
+.toolbar__right {
+    text-align: right;
+}
+
+/* 箱が連結されたような見た目（┌─┬─┬…） */
+.pager{
+  display:inline-flex;
+  border:1px solid var(--border);
+  border-radius:4px;
+  overflow:hidden;          /* 角丸をきれいに見せる */
+  background:#fff;
+}
+
+.pager__item{
+  display:inline-block;
+  padding:8px 14px;
+  text-decoration:none;
+  color:var(--text);
+  background:#fff;
+  border-right:1px solid var(--border);
+  line-height:1;
+}
+
+/* 最後の仕切り線を消す */
+.pager__item:last-child{
+  border-right:none;
+}
+
+/* 現在ページを反転 */
+.pager__item.is-current{
+  background:#7a6657;
+  color:#fff;
+}
+
+/* 無効（最初/最後での＜・＞） */
+.pager__item.is-disabled{
+  color:var(--muted);
+  background:#f6f2ee;
+  pointer-events:none;
+}
+
+/* 旧 .pagination の中央寄せなどは不要 */
+.pagination{ margin:0; text-align:right; } /* 念のため */

@@ -3,8 +3,8 @@ FROM php:8.2-fpm
 COPY php.ini /usr/local/etc/php/
 
 # UID/GIDを受け取る(wsl対応、ファイル権限問題対策)
-ARG UID=501
-ARG GID=20
+ARG UID
+#ARG GID=20
 
 # 基本拡張とビルドに必要なツール群
 RUN apt update \
@@ -12,7 +12,8 @@ RUN apt update \
   && docker-php-ext-install pdo_mysql zip
 
 # UID/GIDをwww-dataに適用（ここが重要）(wsl対応、ファイル権限問題対策)
-RUN usermod -u ${UID} www-data && groupmod -g ${GID} www-data
+#RUN usermod -u ${UID} www-data && groupmod -g ${GID} www-data
+RUN [ -n "${UID:-}" ] && usermod -u "${UID}" www-data
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php \
